@@ -1,12 +1,23 @@
 <template>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="search-wrapper">
+        <Search />
+      </div>
+    </div>
+  </div>
+</div>
   <div>
-    <Search />
-    <Card />
-    <div v-for="job in jobs" :key="job.id">
-      <p>{{ job.title }}</p>
+    <div>
+      <div v-for="job in jobs" :key="job.id">
+        <Card :jobPost="job"/>
+      </div>
     </div>
   </div>
 </template>
+
+<style src="../app.scss" lang="scss" scoped></style>
 
 <script lang="ts">
 // import axios from 'axios';

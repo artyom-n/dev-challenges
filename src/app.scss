@@ -19,3 +19,13 @@
     }
   }
 }
+
+.search-wrapper {
+  width: 100%;
+  height: 138px;
+  background: url(./assets/search.png);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
