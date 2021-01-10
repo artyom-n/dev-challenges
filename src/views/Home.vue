@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="search-wrapper">
-          <form v-on:submit.prevent="searchJobs(searchWord)">
+          <form v-on:submit.prevent="searchJobs()">
             <input
               type="search"
               v-model="searchWord"
@@ -25,11 +25,28 @@
       <div class="col-xs-2">
         <div>
           <Location />
+          <input type="checkbox" id="fullTime" v-model="fullTime" />
+          <label for="fullTime">Full time</label>
+          <input
+            type="search"
+            v-model="locationWord"
+            placeholder="City, state, zip code or country"
+          />
+          <input type="radio" id="all" value="" v-model="radioWord" checked="checked" />
+          <label for="all">All</label><br />
+          <input type="radio" id="london" value="London" v-model="radioWord" />
+          <label for="london">London</label><br />
+          <input type="radio" id="amsterdam" value="Amsterdam" v-model="radioWord" />
+          <label for="amsterdam">Amsterdam</label><br />
+          <input type="radio" id="newyork" value="NY" v-model="radioWord" />
+          <label for="newyork">New York</label><br />
+          <input type="radio" id="berlin" value="Berlin" v-model="radioWord" />
+          <label for="berlin">Berlin</label>
         </div>
       </div>
       <div class="col-xs-6">
         <div v-for="job in filteredJobs" :key="job.id">
-          <router-link to="/about"><Card :jobPost="job" /></router-link>
+            <Card :jobPost="job" />
         </div>
       </div>
     </div>
@@ -58,6 +75,9 @@ type Job = {
 };
 type Data = {
   searchWord: string;
+  locationWord: string;
+  radioWord: string;
+  fullTime: boolean;
   jobs: Job[];
 };
 const Home = defineComponent({
@@ -70,22 +90,29 @@ const Home = defineComponent({
   data(): Data {
     return {
       searchWord: '',
+      locationWord: '',
+      radioWord: '',
+      fullTime: true,
       jobs: [],
     };
   },
   computed: {
     filteredJobs(): Job[] {
-      return this.jobs.filter(
-        (item) => item.company.includes(this.searchWord)
-          || item.location.includes(this.searchWord)
-          || item.title.includes(this.searchWord)
-          || item.description.includes(this.searchWord),
+      let fullTimeWord = '';
+      if (this.fullTime) {
+        fullTimeWord = 'Full Time';
+      }
+      const searchedJobs = this.jobs.filter(
+        (item) => item.company.toLowerCase().includes(this.searchWord)
+          || item.location.toLowerCase().includes(this.searchWord)
+          || item.title.toLowerCase().includes(this.searchWord)
+          || item.description.toLowerCase().includes(this.searchWord),
       );
-    },
-  },
-  methods: {
-    searchJobs(value: string) {
-      this.searchWord = value;
+      const locationJobs = searchedJobs
+        .filter((item) => item.location.toLowerCase().includes(this.locationWord.toLowerCase()));
+      const radioJobs = locationJobs.filter((item) => item.location.includes(this.radioWord));
+      const fullTimeJobs = radioJobs.filter((item) => item.type === fullTimeWord);
+      return fullTimeJobs;
     },
   },
   mounted() {
@@ -95,7 +122,6 @@ const Home = defineComponent({
       .then((response) => response.json())
       .then((data) => {
         this.jobs = data;
-        console.log(data);
       })
       .catch((err) => console.log(err.message));
   },

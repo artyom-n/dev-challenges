@@ -3,7 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-10">
-          <div class="card">
+          <router-link
+            :to="{ name: 'About', params: { id: jobPost.id } }">
+           <div class="card">
             <div class="row bottom-xs">
               <div class="col-xs-2">
                 <div class="image-wrapper">
@@ -29,6 +31,7 @@
               </div>
             </div>
           </div>
+          </router-link>
         </div>
       </div>
     </div>
