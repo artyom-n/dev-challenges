@@ -3,7 +3,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-3">
-                    Github Jobs
+                    <span class="logo-github">
+                        Github <span class="logo-jobs">Jobs</span>
+                    </span>
                 </div>
                 <div class="col-xs-9">
 

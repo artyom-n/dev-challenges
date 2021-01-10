@@ -29,7 +29,7 @@
       </div>
       <div class="col-xs-6">
         <div v-for="job in filteredJobs" :key="job.id">
-          <Card :jobPost="job" />
+          <router-link to="/about"><Card :jobPost="job" /></router-link>
         </div>
       </div>
     </div>

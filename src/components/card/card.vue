@@ -7,7 +7,11 @@
             <div class="row bottom-xs">
               <div class="col-xs-2">
                 <div class="image-wrapper">
-                  <img src="https://picsum.photos/90/90" alt="" />
+                  <img
+                    :src='jobPost.company_logo'
+                    alt="" height="90" width="90"
+                    class="image"
+                  />
                 </div>
               </div>
               <div class="col-xs-7">

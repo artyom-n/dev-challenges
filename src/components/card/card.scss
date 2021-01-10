@@ -12,3 +12,13 @@
     display: flex;
     justify-content: space-between;    
 }
+
+.image-wrapper {    
+    overflow: hidden; 
+    display: flex;
+    height: 100%;
+}
+
+.image {
+    border-radius: 6px;
+}
