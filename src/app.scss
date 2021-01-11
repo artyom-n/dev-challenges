@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .card-about {    
@@ -23,16 +24,6 @@
 .city-days {
   display: flex;
   justify-content: space-between;    
-}
-
-.image-wrapper {    
-  overflow: hidden; 
-  display: flex;
-  height: 100%;
-}
-
-.image {
-  border-radius: 6px;
 }
 
 .footer {

@@ -11,7 +11,7 @@
                 <div class="image-wrapper">
                   <img
                     :src='jobPost.company_logo'
-                    alt="" height="90" width="90"
+                    :alt='jobPost.company'
                     class="image"
                   />
                 </div>
