@@ -4,13 +4,14 @@
       <div class="row">
         <div class="col-xs-3">
           <div class="logo-wrapper">
-            <router-link class="logo-link" to="/">
-              <span class="logo-github">
-                Github
-                <span class="logo-jobs">
-                  Jobs
-                </span>
+            <router-link
+              class="logo-link"
+              to="/">
+            <span class="logo-github"> Github
+              <span class="logo-jobs">
+                Jobs
               </span>
+            </span>
             </router-link>
           </div>
         </div>
@@ -26,5 +27,6 @@
 import { defineComponent } from 'vue';
 
 const Header = defineComponent({});
+
 export default Header;
 </script>
