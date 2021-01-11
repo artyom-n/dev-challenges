@@ -8,37 +8,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
 }
 
-.card-about {
+.card-about {    
   background-color: rgb(137, 217, 241);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   margin: 20px;
-  padding: 12px;
+  padding: 12px
 }
 .vacancy {
   text-align: left;
 }
 .city-days {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;    
 }
-​ .image-wrapper {
-  overflow: hidden;
+
+.image-wrapper {    
+  overflow: hidden; 
   display: flex;
   height: 100%;
 }
-​ .image {
+
+.image {
   border-radius: 6px;
 }
-​ .footer {
+
+.footer {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  color: #b9bdcf;
-  margin-bottom: 20px;
+  color: #B9BDCF;
+  margin-bottom: 20px
 }
