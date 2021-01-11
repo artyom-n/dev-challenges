@@ -16,7 +16,7 @@
           </div>
           <div v-if="job" class="card">
             <div class="row">
-            <div class="col-xs-7">
+            <div class="col-xs-12">
               <div class="title-type-wrapper">
                 <div class="title">{{ job['title'] }}</div>
                 <div class="type">{{ job['type'] }}</div>
