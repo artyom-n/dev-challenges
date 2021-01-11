@@ -3,11 +3,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-3">
-          <router-link to="/">Back to search</router-link>
-          <h5>HOW TO APPLY</h5>
-          <p>
-            Please email a copy of your resume and online portfolio to wes@kasisto.com & CC
-            eric@kasisto.com
+          <router-link to="/" class="back-link">
+          <font-awesome-icon icon="long-arrow-alt-left" class="back-link__icon"/>
+          <span class="back-link__text">Back to search</span>
+          </router-link>
+          <p class="apply-heading">HOW TO APPLY</p>
+          <p class="apply-text">
+            {{ job['how_to_apply'] }}
           </p>
         </div>
         <div class="col-xs-9">
@@ -23,7 +25,7 @@
               </div>
               <div class="icon-time-wrapper">
                 <font-awesome-icon icon="clock" class="clock"/>
-                <div>{{ job['created_at'] }}</div>
+                <div>{{ getDateFormat(job['created_at']) }} days ago</div>
               </div>
             </div>
             </div>
@@ -118,7 +120,17 @@ const About = defineComponent({
       return newText;
     },
   },
-  methods: {},
+  methods: {
+    getDateFormat(date: string) {
+      const jobDate = new Date(date);
+
+      const today = new Date();
+
+      const difference = today.getTime() - jobDate.getTime();
+
+      return Math.floor(difference / (1000 * 3600 * 24));
+    },
+  },
   mounted() {
     this.loading = true;
     fetch('https://raw.githubusercontent.com/mart-j/jobs/main/positions.json')
