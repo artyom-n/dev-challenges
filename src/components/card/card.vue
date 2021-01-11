@@ -2,8 +2,8 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-xs-10">
-          <router-link
+        <div class="col-xs-9">
+          <router-link class="link"
             :to="{ name: 'About', params: { id: jobPost.id } }">
            <div class="card">
             <div class="row bottom-xs">
@@ -16,17 +16,23 @@
                   />
                 </div>
               </div>
-              <div class="col-xs-7">
+              <div class="col-xs-6">
                 <div class="vacancy">
-                  <h6>{{ jobPost.company }}</h6>
-                  <h3>{{ jobPost.title }}</h3>
-                  <h4>{{ jobPost.type }}</h4>
+                  <div class="company">{{ jobPost.company }}</div>
+                  <div class="developer">{{ jobPost.title }}</div>
+                  <div class="fulltime">{{ jobPost.type }}</div>
                 </div>
               </div>
-              <div class="col-xs-3">
+              <div class="col-xs-4">
                 <div class="city-days">
-                  <span>{{ jobPost.location }}</span>
-                  <span>{{ jobPost.created_at }}</span>
+                  <div class="icon-loc-wrapper">
+                    <font-awesome-icon icon="globe-americas" class="globe-americas"/>
+                  <div>{{ jobPost.location }}</div>
+                  </div>
+                  <div class="icon-time-wrapper">
+                    <font-awesome-icon icon="clock" class="clock"/>
+                    <div>{{ jobPost.created_at }}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -40,6 +46,7 @@
 <style src="./card.scss" lang="scss" scoped></style>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const Card = defineComponent({
   /* eslint-disable @typescript-eslint/camelcase */
@@ -57,6 +64,9 @@ const Card = defineComponent({
       how_to_apply: String,
       company_logo: String,
     },
+  },
+  components: {
+    FontAwesomeIcon,
   },
 });
 export default Card;

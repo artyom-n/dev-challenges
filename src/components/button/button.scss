@@ -1,0 +1,20 @@
+button {
+  background-color:rgb(30, 134, 255);
+  color: #ffffff;
+  padding: 14px 48px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  line-height: 19px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  outline: none;
+
+  &:hover {
+      background-color: rgba(30, 134, 255, 0.8);
+  }
+}
+
+

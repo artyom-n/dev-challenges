@@ -1,37 +1,17 @@
 <template>
   <div class="container">
-    <!-- <div class="row">
-      <div class="col-xs-12">
-        <div class="search-wrapper">
-          <Search />
-        </div>
-      </div>
-    </div> -->
     <div class="row">
       <div class="col-xs-12">
         <div class="search-wrapper">
-          <form v-on:submit.prevent="searchJobs()">
-            <input
-              type="search"
-              v-model="searchWord"
-              placeholder="Title, companies, expertise or benefits"
-            />
-            <button>Add</button>
-          </form>
+          <Search v-model:title="searchWord" />
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-2">
+      <div class="col-xs-3">
         <div>
-          <Location />
-          <input type="checkbox" id="fullTime" v-model="fullTime" />
-          <label for="fullTime">Full time</label>
-          <input
-            type="search"
-            v-model="locationWord"
-            placeholder="City, state, zip code or country"
-          />
+          <Checkbox v-model:input="fullTime" label="Full time"/>
+          <Location v-model:title="locationWord" label="LOCATION"/>
           <input type="radio" id="all" value="" v-model="radioWord" checked="checked" />
           <label for="all">All</label><br />
           <input type="radio" id="london" value="London" v-model="radioWord" />
@@ -44,21 +24,24 @@
           <label for="berlin">Berlin</label>
         </div>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-9">
         <div v-for="job in filteredJobs" :key="job.id">
-            <Card :jobPost="job" />
+          <Card :jobPost="job" />
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <style src="../app.scss" lang="scss" scoped></style>
+
 <script lang="ts">
 // import axios from 'axios';
 import { defineComponent } from 'vue';
-// import Search from '../components/search/search.vue';
-import Location from '../components/location/location.vue';
+import Search from '../components/search/search.vue';
 import Card from '../components/card/card.vue';
+import Checkbox from '../components/checkbox/checkbox.vue';
+import Location from '../components/location/location.vue';
 
 type Job = {
   id: string;
@@ -83,8 +66,9 @@ type Data = {
 const Home = defineComponent({
   name: 'Home',
   components: {
-    // Search,
+    Search,
     Card,
+    Checkbox,
     Location,
   },
   data(): Data {
@@ -92,7 +76,7 @@ const Home = defineComponent({
       searchWord: '',
       locationWord: '',
       radioWord: '',
-      fullTime: true,
+      fullTime: false,
       jobs: [],
     };
   },
@@ -102,6 +86,9 @@ const Home = defineComponent({
       if (this.fullTime) {
         fullTimeWord = 'Full Time';
       }
+
+      console.log('checked fulltime', this.fullTime);
+
       const searchedJobs = this.jobs.filter(
         (item) => item.company.toLowerCase().includes(this.searchWord)
           || item.location.toLowerCase().includes(this.searchWord)
@@ -110,8 +97,10 @@ const Home = defineComponent({
       );
       const locationJobs = searchedJobs
         .filter((item) => item.location.toLowerCase().includes(this.locationWord.toLowerCase()));
+
       const radioJobs = locationJobs.filter((item) => item.location.includes(this.radioWord));
-      const fullTimeJobs = radioJobs.filter((item) => item.type === fullTimeWord);
+
+      const fullTimeJobs = radioJobs.filter((item) => item.type.includes(fullTimeWord));
       return fullTimeJobs;
     },
   },

@@ -1,24 +1,4 @@
-.app {
-  background-color: white;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-.nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 .search-wrapper {
   width: 100%;
@@ -28,33 +8,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
-.card-about {    
+.card-about {
   background-color: rgb(137, 217, 241);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   margin: 20px;
-  padding: 12px
+  padding: 12px;
 }
 .vacancy {
   text-align: left;
 }
 .city-days {
   display: flex;
-  justify-content: space-between;    
+  justify-content: space-between;
 }
-
-.image-wrapper {    
-  overflow: hidden; 
+​ .image-wrapper {
+  overflow: hidden;
   display: flex;
   height: 100%;
 }
-
-.image {
+​ .image {
   border-radius: 6px;
 }
-
-.about-footer {
+​ .footer {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #b9bdcf;
+  margin-bottom: 20px;
 }
