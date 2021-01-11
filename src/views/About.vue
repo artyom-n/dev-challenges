@@ -53,7 +53,6 @@
         </div>
       </div>
     </div>
-    <footer class="about-footer">Your name @ DevChallenges.io</footer>
   </section>
 </template>
 <style src="../app.scss" lang="scss" scoped></style>
