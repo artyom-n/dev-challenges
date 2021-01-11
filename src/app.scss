@@ -11,19 +11,125 @@
   margin-bottom: 40px;
 }
 
-.card-about {    
-  background-color: rgb(137, 217, 241);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  margin: 20px;
-  padding: 12px
-}
-.vacancy {
-  text-align: left;
-}
-.city-days {
+.title-type-wrapper {
   display: flex;
-  justify-content: space-between;    
+}
+
+.type {
+  border: 1px solid #334680;    
+  border-radius: 4px;
+  width: 68px;
+  height: 26px;
+  padding: 6px 8px;    
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #334680
+}
+
+.title {    
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #334680;
+  margin-right: 17px
+}
+
+.globe-americas {
+  color: rgb(185, 189, 207);
+  width: 15px;
+  height: 15px;
+  margin: -1px 8px
+}
+
+.clock {
+  color: rgb(185, 189, 207);    
+  width: 15px;
+  height: 15px;
+  margin: -1px 8px
+}
+
+.icon-loc-wrapper {
+  display: flex
+}
+
+.icon-time-wrapper {
+  color: #B7BCCE;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.icon-city-wrapper {
+  color: #B7BCCE;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.image-wrapper {   
+  width: 42px;
+  height: 42px; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px
+}
+
+.image {
+  border-radius: 4px;
+  width: 100%;
+}
+
+.company {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #334680;
+  margin-left: 9px;
+  margin-bottom: 4px
+}
+
+.logo-company-wrapper {
+  display: flex;
+}
+
+.radio-wrapper {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.radio-button {
+  margin: 0;
+  -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.radio-text {
+  margin: 0;
+  margin-left: 12px;
+  color: rgb(51, 70, 128);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.description {
+ color: #334680;
+ font-size: 16px;
+ line-height: 24px;
+ font-weight: 400;
 }
 
 .footer {

@@ -14,24 +14,36 @@
           <div v-if="loading" class="loading">
             <h1>Loading...</h1>
           </div>
-          <div v-if="job" class="card-about">
-            <div class="row bottom-xs">
-              <div class="col-xs-2">
-                <div class="image-wrapper">
-                  <img :src="job.company_logo" alt="" height="90" width="90" class="image" />
-                </div>
+          <div v-if="job" class="card">
+            <div class="row">
+            <div class="col-xs-7">
+              <div class="title-type-wrapper">
+                <div class="title">{{ job['title'] }}</div>
+                <div class="type">{{ job['type'] }}</div>
               </div>
+              <div class="icon-time-wrapper">
+                <font-awesome-icon icon="clock" class="clock"/>
+                <div>{{ job['created_at'] }}</div>
+              </div>
+            </div>
+            </div>
+            <div class="row">
               <div class="col-xs-7">
-                <div class="vacancy">
-                  <h6>{{ job['company'] }}</h6>
-                  <h3>{{ job['title'] }}</h3>
-                  <h4>{{ job['type'] }}</h4>
-                </div>
-              </div>
-              <div class="col-xs-3">
-                <div class="city-days">
-                  <span>{{ job['location'] }}</span>
-                  <span>{{ job['created_at'] }}</span>
+                <div class="logo-company-wrapper">
+                  <div class="image-wrapper">
+                    <img
+                      :src='job.company_logo'
+                      :alt='job.company'
+                      class="image"
+                    />
+                  </div>
+                  <div class="company-location-wrapper">
+                    <div class="company">{{ job['company'] }}</div>
+                    <div class="icon-city-wrapper">
+                      <font-awesome-icon icon="globe-americas" class="globe-americas"/>
+                      <div class="location">{{ job['location'] }}</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -51,6 +63,7 @@
 <style src="../app.scss" lang="scss" scoped></style>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 type Job = {
   id: string;
@@ -120,6 +133,9 @@ const About = defineComponent({
         console.log('description', this.job.description);
       })
       .catch((err) => console.log(err.message));
+  },
+  components: {
+    FontAwesomeIcon,
   },
 });
 export default About;

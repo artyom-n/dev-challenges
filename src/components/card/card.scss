@@ -3,7 +3,8 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
     margin: 20px;
-    padding: 12px
+    margin-right: 0;
+    padding: 12px;
 }
 .vacancy {
     text-align: left;
@@ -67,20 +68,22 @@
     color: rgb(185, 189, 207);
     width: 15px;
     height: 15px;
-    margin: 5px
+    margin: 5px;
 }
 
 .clock {
     color: rgb(185, 189, 207);    
     width: 15px;
     height: 15px;
-    margin: 5px
+    margin: 5px;
 }
 
 .icon-loc-wrapper {
-    display: flex
+    display: flex;
+    align-items: center;
 }
 
 .icon-time-wrapper {
-    display: flex
+    display: flex;
+    align-items: center;
 }

@@ -10,18 +10,61 @@
     <div class="row">
       <div class="col-xs-3">
         <div>
-          <Checkbox v-model:input="fullTime" label="Full time"/>
-          <Location v-model:title="locationWord" label="LOCATION"/>
-          <input type="radio" id="all" value="" v-model="radioWord" checked="checked" />
-          <label for="all">All</label><br />
-          <input type="radio" id="london" value="London" v-model="radioWord" />
-          <label for="london">London</label><br />
-          <input type="radio" id="amsterdam" value="Amsterdam" v-model="radioWord" />
-          <label for="amsterdam">Amsterdam</label><br />
-          <input type="radio" id="newyork" value="NY" v-model="radioWord" />
-          <label for="newyork">New York</label><br />
-          <input type="radio" id="berlin" value="Berlin" v-model="radioWord" />
-          <label for="berlin">Berlin</label>
+          <Checkbox v-model:input="fullTime" label="Full time" />
+          <Location v-model:title="locationWord" label="LOCATION" />
+          <div>
+            <div class="radio-wrapper">
+              <input
+                type="radio"
+                id="all"
+                value=""
+                v-model="radioWord"
+                checked="checked"
+                class="radio-button"
+              />
+              <label for="all" class="radio-text">All</label><br />
+            </div>
+            <div class="radio-wrapper">
+              <input
+                type="radio"
+                id="london"
+                value="London"
+                v-model="radioWord"
+                class="radio-button"
+              />
+              <label for="london" class="radio-text">London</label><br />
+            </div>
+            <div class="radio-wrapper">
+              <input
+                type="radio"
+                id="amsterdam"
+                value="Amsterdam"
+                v-model="radioWord"
+                class="radio-button"
+              />
+              <label for="amsterdam" class="radio-text">Amsterdam</label><br />
+            </div>
+            <div class="radio-wrapper">
+              <input
+                type="radio"
+                id="newyork"
+                value="NY"
+                v-model="radioWord"
+                class="radio-button"
+              />
+              <label for="newyork" class="radio-text">New York</label><br />
+            </div>
+            <div class="radio-wrapper">
+              <input
+                type="radio"
+                id="berlin"
+                value="Berlin"
+                v-model="radioWord"
+                class="radio-button"
+              />
+              <label for="berlin" class="radio-text">Berlin</label>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-xs-9">
