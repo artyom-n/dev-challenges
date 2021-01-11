@@ -12,22 +12,22 @@
     display: flex;        
     align-items: bottom;
 }
-​
+
 .image-wrapper {    
     overflow: hidden; 
     display: flex;
     height: 100%;
 }
-​
+
 .image {
     border-radius: 4px;
 }
-​
+
 .link {
     text-decoration: none;
     color: #334680;
 }
-​
+
 .fulltime {
     border: 1px solid #334680;    
     border-radius: 4px;
@@ -38,46 +38,46 @@
     font-size: 12px;
     line-height: 14px;
 }
-​
+
 .developer {    
     font-size: 18px;
     line-height: 21px;
     margin-bottom: 12px;
     font-weight: 400;
 }
-​
+
 .company {
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
     margin-bottom: 8px
 }
-​
+
 .city-days {
     color: #B9BDCF;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
 }
-​
+
 .globe-americas {
     color: rgb(185, 189, 207);
     width: 15px;
     height: 15px;
     margin: 5px
 }
-​
+
 .clock {
     color: rgb(185, 189, 207);    
     width: 15px;
     height: 15px;
     margin: 5px
 }
-​
+
 .icon-loc-wrapper {
     display: flex
 }
-​
+
 .icon-time-wrapper {
     display: flex
 }
