@@ -6,7 +6,7 @@
       <router-link to="/about">About</router-link> -->
     </div>
     <router-view />
-    <footer class="about-footer">Your name @ DevChallenges.io</footer>
+    <footer class="about-footer">Artyom & Aina @ DevChallenges.io</footer>
   </section>
 </template>
 

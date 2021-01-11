@@ -4,7 +4,6 @@
       <div class="row">
         <div class="col-xs-3">
           <router-link to="/">Back to search</router-link>
-          <h2>Job {{ $route.params.id }}</h2>
           <h5>HOW TO APPLY</h5>
           <p>
             Please email a copy of your resume and online portfolio to wes@kasisto.com & CC
@@ -19,13 +18,7 @@
             <div class="row bottom-xs">
               <div class="col-xs-2">
                 <div class="image-wrapper">
-                  <img
-                    :src="job.company_logo"
-                    alt=""
-                    height="90"
-                    width="90"
-                    class="image"
-                  />
+                  <img :src="job.company_logo" alt="" height="90" width="90" class="image" />
                 </div>
               </div>
               <div class="col-xs-7">
@@ -75,17 +68,28 @@ type Job = {
 type Data = {
   job: Job;
   loading: boolean;
-  currentId: string;
   description: string;
 };
 const About = defineComponent({
   name: 'About',
   data(): Data {
     return {
-      job: [],
+      /* eslint-disable @typescript-eslint/camelcase */
+      job: {
+        id: '',
+        type: '',
+        url: '',
+        created_at: '',
+        company: '',
+        company_url: '',
+        location: '',
+        title: '',
+        description: '',
+        how_to_apply: '',
+        company_logo: '',
+      },
       loading: false,
       description: '',
-      // currentId: this.$route.params.id,
     };
   },
   computed: {
@@ -107,7 +111,7 @@ const About = defineComponent({
     fetch('https://raw.githubusercontent.com/mart-j/jobs/main/positions.json')
       .then((response) => response.json())
       .then((data) => {
-        const index = data.findIndex((item) => item.id === this.$route.params.id);
+        const index = data.findIndex((item: Job) => item.id === this.$route.params.id);
         this.job = data[index];
         this.description = data[index].description;
         this.loading = false;
