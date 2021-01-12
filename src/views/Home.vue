@@ -132,10 +132,10 @@ const Home = defineComponent({
       console.log('checked fulltime', this.fullTime);
 
       const searchedJobs = this.jobs.filter(
-        (item) => item.company.toLowerCase().includes(this.searchWord)
-          || item.location.toLowerCase().includes(this.searchWord)
-          || item.title.toLowerCase().includes(this.searchWord)
-          || item.description.toLowerCase().includes(this.searchWord),
+        (item) => item.company.toLowerCase().includes(this.searchWord.toLowerCase())
+          || item.location.toLowerCase().includes(this.searchWord.toLowerCase())
+          || item.title.toLowerCase().includes(this.searchWord.toLowerCase())
+          || item.description.toLowerCase().includes(this.searchWord.toLowerCase()),
       );
 
       const locationJobs = searchedJobs
