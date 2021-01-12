@@ -2,17 +2,15 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-xs-3">
+        <div class="col-xs-4">
           <router-link to="/" class="back-link">
           <font-awesome-icon icon="long-arrow-alt-left" class="back-link__icon"/>
           <span class="back-link__text">Back to search</span>
           </router-link>
           <p class="apply-heading">HOW TO APPLY</p>
-          <p class="apply-text">
-            {{ job['how_to_apply'] }}
-          </p>
+          <p class="apply-text" v-html=job.how_to_apply></p>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-7">
           <div v-if="loading" class="loading">
             <h1>Loading...</h1>
           </div>
@@ -52,9 +50,10 @@
           </div>
           <div>
             <div>
-              <p v-for="paragraph in convertedText" :key="paragraph" class="description">
+              <!-- <p v-for="paragraph in convertedText" :key="paragraph" class="description">
                 {{ paragraph }}
-              </p>
+              </p> -->
+              <p class="description" v-html=job.description></p>
             </div>
           </div>
         </div>
