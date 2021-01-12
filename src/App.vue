@@ -1,12 +1,18 @@
 <template>
   <section>
-    <Header />
-    <div class="nav">
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <Header />
+          <router-view />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <footer class="footer">A & A @ DevChallenges.io</footer>
+        </div>
+      </div>
     </div>
-    <router-view />
-    <footer class="footer">A & A @ DevChallenges.io</footer>
   </section>
 </template>
 

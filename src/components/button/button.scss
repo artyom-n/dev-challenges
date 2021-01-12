@@ -18,3 +18,9 @@ button {
 }
 
 
+@media only screen and (max-width: 900px) {
+  button {
+    padding: 14px 27px;
+  }
+}
+

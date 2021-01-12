@@ -13,6 +13,7 @@
 
 .title-type-wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .type {
@@ -25,6 +26,7 @@
   font-size: 12px;
   line-height: 14px;
   color: #334680;
+  margin-bottom: 10px
 }
 
 .title {
@@ -142,7 +144,7 @@
   font-size: 14px;
   line-height: 17px;
   color: #b9bdcf;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .back-link {
@@ -187,4 +189,6 @@
   font-size: 14px;
   line-height: 21px;
   color: rgba(51, 70, 128, 1);
+  margin-bottom: 36px;
 }
+

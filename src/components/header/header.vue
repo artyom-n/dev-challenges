@@ -1,21 +1,19 @@
 <template>
   <section>
-    <div class="container">
+    <div class="comtainer container-fluid">
       <div class="row">
-        <div class="col-xs-3">
+        <div class="col-xs-12">
           <div class="logo-wrapper">
-            <router-link
-              class="logo-link"
-              to="/">
-            <span class="logo-github"> Github
-              <span class="logo-jobs">
-                Jobs
+            <router-link class="logo-link" to="/">
+              <span class="logo-github">
+                Github
+                <span class="logo-jobs">
+                  Jobs
+                </span>
               </span>
-            </span>
             </router-link>
           </div>
         </div>
-        <div class="col-xs-9"></div>
       </div>
     </div>
   </section>

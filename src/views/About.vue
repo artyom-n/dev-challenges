@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="container">
+    <div class="container container-fluid">
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-md-4">
           <router-link to="/" class="back-link">
           <font-awesome-icon icon="long-arrow-alt-left" class="back-link__icon"/>
           <span class="back-link__text">Back to search</span>
@@ -10,7 +10,7 @@
           <p class="apply-heading">HOW TO APPLY</p>
           <p class="apply-text" v-html=job.how_to_apply></p>
         </div>
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-md-8">
           <div v-if="loading" class="loading">
             <h1>Loading...</h1>
           </div>
@@ -28,7 +28,7 @@
             </div>
             </div>
             <div class="row">
-              <div class="col-xs-7">
+              <div class="col-xs-12 col-md-7">
                 <div class="logo-company-wrapper">
                   <div class="image-wrapper">
                     <img

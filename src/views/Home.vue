@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container container-fluid">
     <div class="row">
       <div class="col-xs-12">
         <div class="search-wrapper">
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-xs-12 col-md-3">
         <div>
           <Checkbox v-model:input="fullTime" label="Full time" />
           <Location v-model:title="locationWord" label="LOCATION" />
@@ -67,7 +67,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-9">
+      <div class="col-xs-12 col-sm-12 col-md-9">
         <div v-for="job in filteredJobs" :key="job.id">
           <Card :jobPost="job" />
         </div>
