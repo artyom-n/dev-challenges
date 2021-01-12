@@ -109,10 +109,7 @@
 @media only screen and (max-width: 370px) {
     .image-wrapper {   
         width: 70px;
-        height: 70px; 
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
+        height: 70px;        
         align-items: flex-start;
     }
 }

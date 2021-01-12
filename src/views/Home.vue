@@ -79,7 +79,6 @@
 <style src="../app.scss" lang="scss" scoped></style>
 
 <script lang="ts">
-// import axios from 'axios';
 import { defineComponent } from 'vue';
 import Search from '../components/search/search.vue';
 import Card from '../components/card/card.vue';
@@ -138,6 +137,7 @@ const Home = defineComponent({
           || item.title.toLowerCase().includes(this.searchWord)
           || item.description.toLowerCase().includes(this.searchWord),
       );
+
       const locationJobs = searchedJobs
         .filter((item) => item.location.toLowerCase().includes(this.locationWord.toLowerCase()));
 
