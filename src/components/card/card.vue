@@ -8,7 +8,18 @@
               <div class="row bottom-xs">
                 <div class="col-xs-2">
                   <div class="image-wrapper">
-                    <img :src="jobPost.company_logo" :alt="jobPost.company" class="image" />
+                    <img
+                      v-if="jobPost.company_logo"
+                      :src="jobPost.company_logo"
+                      :alt="jobPost.company"
+                      class="image"
+                    />
+                    <img
+                      v-else
+                      src="@/assets/not_found_logo.png"
+                      :alt="jobPost.company"
+                      class="image"
+                    />
                   </div>
                 </div>
                 <div class="col-xs-6">

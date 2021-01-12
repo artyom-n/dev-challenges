@@ -47,7 +47,8 @@
   color: rgb(185, 189, 207);
   width: 15px;
   height: 15px;
-  margin: -1px 8px;
+  margin: 0;
+  margin-right: 8px;
 }
 
 .icon-loc-wrapper {
@@ -131,6 +132,7 @@
   line-height: 24px;
   font-weight: 400;
   text-align: justify;
+  margin-bottom: 40px;
 }
 
 .footer {

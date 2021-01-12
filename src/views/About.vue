@@ -32,8 +32,15 @@
                 <div class="logo-company-wrapper">
                   <div class="image-wrapper">
                     <img
+                      v-if="job.company_logo"
                       :src='job.company_logo'
                       :alt='job.company'
+                      class="image"
+                    />
+                    <img
+                      v-else
+                      src="@/assets/not_found_logo.png"
+                      :alt="job.company"
                       class="image"
                     />
                   </div>
