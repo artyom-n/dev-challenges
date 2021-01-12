@@ -10,7 +10,7 @@
           <p class="apply-heading">HOW TO APPLY</p>
           <p class="apply-text" v-html=job.how_to_apply></p>
         </div>
-        <div class="col-xs-7">
+        <div class="col-xs-8">
           <div v-if="loading" class="loading">
             <h1>Loading...</h1>
           </div>
@@ -50,9 +50,6 @@
           </div>
           <div>
             <div>
-              <!-- <p v-for="paragraph in convertedText" :key="paragraph" class="description">
-                {{ paragraph }}
-              </p> -->
               <p class="description" v-html=job.description></p>
             </div>
           </div>
@@ -106,18 +103,8 @@ const About = defineComponent({
       description: '',
     };
   },
-  computed: {
-    convertedText(): string[] {
-      const text = this.description.split(/<.>/g);
-      const newText = text.map((item) => item
-        .replace(/<(style|script|iframe)[^>]*?>[\s\S]+?<\/\1\s*>/gi, '')
-        .replace(/<[^>]+?>/g, '')
-        .replace(/\s+/g, ' ')
-        .replace(/ /g, ' ')
-        .replace(/>/g, ' '));
-      console.log(newText);
-      return newText;
-    },
+  components: {
+    FontAwesomeIcon,
   },
   methods: {
     getDateFormat(date: string) {
@@ -132,21 +119,17 @@ const About = defineComponent({
   },
   mounted() {
     this.loading = true;
+
     fetch('https://raw.githubusercontent.com/mart-j/jobs/main/positions.json')
       .then((response) => response.json())
       .then((data) => {
         const index = data.findIndex((item: Job) => item.id === this.$route.params.id);
+
         this.job = data[index];
-        this.description = data[index].description;
+
         this.loading = false;
-        console.log('array of jobs', data);
-        console.log('current job object', data[index]);
-        console.log('description', this.job.description);
       })
       .catch((err) => console.log(err.message));
-  },
-  components: {
-    FontAwesomeIcon,
   },
 });
 export default About;
