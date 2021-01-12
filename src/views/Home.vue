@@ -68,8 +68,13 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-9">
-        <div v-for="job in filteredJobs" :key="job.id">
-          <Card :jobPost="job" />
+        <div v-if="loading" class="loading">
+          <p>Loading...</p>
+        </div>
+        <div v-if="filteredJobs">
+          <div v-for="job in filteredJobs" :key="job.id">
+            <Card :jobPost="job" />
+          </div>
         </div>
       </div>
     </div>
@@ -103,6 +108,7 @@ type Data = {
   locationWord: string;
   radioWord: string;
   fullTime: boolean;
+  loading: boolean;
   jobs: Job[];
 };
 const Home = defineComponent({
@@ -119,6 +125,7 @@ const Home = defineComponent({
       locationWord: '',
       radioWord: '',
       fullTime: false,
+      loading: false,
       jobs: [],
     };
   },
@@ -150,10 +157,12 @@ const Home = defineComponent({
   mounted() {
     // const accessPoint = 'https://cors-anywhere.herokuapp.com';
     // const url = 'https://jobs.github.com/positions.json';
+    this.loading = true;
     fetch('https://raw.githubusercontent.com/mart-j/jobs/main/positions.json')
       .then((response) => response.json())
       .then((data) => {
         this.jobs = data;
+        this.loading = false;
       })
       .catch((err) => console.log(err.message));
   },

@@ -12,7 +12,7 @@
         </div>
         <div class="col-xs-12 col-md-8">
           <div v-if="loading" class="loading">
-            <h1>Loading...</h1>
+            <p>Loading...</p>
           </div>
           <div v-if="job" class="card">
             <div class="row">
